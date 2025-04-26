@@ -1,0 +1,3 @@
+# App shortcuts
+alt - c : open -a 'Visual Studio Code'
+alt - t : open -a 'iTerm'
