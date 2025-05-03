@@ -117,6 +117,8 @@ alt-shift-l = 'move right'
 alt-minus = 'resize smart -50'
 alt-equal = 'resize smart +50'
 
+alt-ctrl-enter = 'fullscreen'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
@@ -211,7 +213,36 @@ down = 'volume down'
 up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
 
-# JankyBorders
-after-startup-command = [
-  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
-]
+[[on-window-detected]]
+    if.app-id = 'com.microsoft.VSCode'
+    run = ['move-node-to-workspace 1' ] # The callback itself
+
+# iTerm2
+[[on-window-detected]]
+    if.app-id = 'com.googlecode.iterm2'
+    run = ['layout tiling', 'move-node-to-workspace 1' ]
+
+# Chrome
+[[on-window-detected]]
+    if.app-id = 'com.google.Chrome'
+    run = ['move-node-to-workspace 3' ]
+
+# Slack
+[[on-window-detected]]
+    if.app-id = 'com.google.Chrome'
+    run = ['move-node-to-workspace 6' ]
+
+# Todoist
+[[on-window-detected]]
+    if.app-id = 'com.readdle.smartemail-Mac'
+    run = ['move-node-to-workspace 7' ]
+
+# Email
+[[on-window-detected]]
+    if.app-id = 'com.readdle.smartemail-Mac'
+    run = ['move-node-to-workspace 8' ]
+
+# Tower
+[[on-window-detected]]
+    if.app-id = 'com.fournova.Tower3'
+    run = ['move-node-to-workspace 8' ]
